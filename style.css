@@ -1,0 +1,58 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.container{
+    background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+input[type="text"]{
+    width: 70%;
+    padding: 8px;
+    margin-right: 5px;
+}
+
+button{
+    padding: 8px 15px;
+    background-color: rgb(18, 129, 24);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(11, 88, 15);
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+li{
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgb(250, 250, 236);
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.borrar-btn{
+    background-color: rgb(168, 30, 58);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.borrar-btn:hover{
+    background-color:  rgb(122, 20, 41);
+}
