@@ -19,6 +19,8 @@ function agregarTarea(){
     listadoTarea.appendChild(li);
 
     nuevaTarea.value = "";
+
+    guardarTareasEnLocalStorage();
 }
 
 function borrarTarea(elementoTarea){
@@ -28,8 +30,22 @@ function borrarTarea(elementoTarea){
 
 const inputNuevaTarea = document.getElementById("nuevaTarea");
 
+
+
 inputNuevaTarea.addEventListener("keypress", function(tecla){
     if(tecla.key === "Enter"){
         agregarTarea();
     }
 });
+
+function guardarTareasEnLocalStorage(){
+    const tareas = [];
+    document.querySelectorAll("li").forEach(tarea => {
+        tareas.push({
+            Nombre_Tarea: tarea.querySelector("span").innerText,
+            Estado_Tarea: tarea.classList.contains("completado")
+        });
+    });
+
+    localStorage.setItem("TareasGuardadas", tareas);
+}
