@@ -47,5 +47,31 @@ function guardarTareasEnLocalStorage(){
         });
     });
 
-    localStorage.setItem("TareasGuardadas", tareas);
+    localStorage.setItem("TareasGuardadas", JSON.stringify(tareas));
 }
+
+
+
+function cargarTareas(){
+    const tareas = JSON.parse(localStorage.getItem("TareasGuardadas")) || [];
+    const listadoTareas = document.getElementById("listadoTareas");
+
+    tareas.forEach(tarea =>{
+        
+        const li = document.createElement("li");
+        li.innerHTML = `
+        <span>${tarea.Nombre_Tarea}</span>
+        <button class="borrar-btn" onclick="borrarTarea(this)">Eliminar</button>
+        `;
+
+        if(tarea.Estado_Tarea == true){
+            li.classList.add("completado");
+        }
+
+        listadoTareas.appendChild(li);
+    });
+
+}
+
+
+
